@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Apartments</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Street</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
+      <th>City</th>
+      <th>Zip</th>
+      <th>State</th>
+      <th>Country</th>
+      <th>Name</th>
+      <th>Phone</th>
+      <th>Hours contact</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @apartments.each do |apartment| %>
+      <tr>
+        <td><%= apartment.street %></td>
+        <td><%= apartment.latitude %></td>
+        <td><%= apartment.longitude %></td>
+        <td><%= apartment.city %></td>
+        <td><%= apartment.zip %></td>
+        <td><%= apartment.state %></td>
+        <td><%= apartment.country %></td>
+        <td><%= apartment.name %></td>
+        <td><%= apartment.phone %></td>
+        <td><%= apartment.hours_contact %></td>
+        <td><%= link_to 'Show', apartment %></td>
+        <td><%= link_to 'Edit', edit_apartment_path(apartment) %></td>
+        <td><%= link_to 'Destroy', apartment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Apartment', new_apartment_path %>
