@@ -61,11 +61,11 @@
     <%= form.text_area :hours_contact, id: :apartment_hours_contact %>
   </div>
 
-  <div class="field">
-    <%= form.file_field :image %>
+  <div class="field imageattach">
+    <%= form.file_field :image, id: :attach %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: :buttontext %>
   </div>
 <% end %>

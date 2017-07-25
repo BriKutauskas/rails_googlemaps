@@ -1,5 +1,7 @@
 <h1>New Apartment</h1>
+<div class="form">
+  <%= render 'form', apartment: @apartment %>
 
-<%= render 'form', apartment: @apartment %>
+  <%= link_to 'Back', apartments_path %>
 
-<%= link_to 'Back', apartments_path %>
+</div>

@@ -6,15 +6,15 @@
   <thead>
     <tr>
       <th>Street</th>
-      <th>Latitude</th>
+      <th class="latitude">Latitude</th>
       <th>Longitude</th>
       <th>City</th>
       <th>Zip</th>
-      <th>State</th>
+      <th class="state">State</th>
       <th>Country</th>
       <th>Name</th>
       <th>Phone</th>
-      <th>Hours contact</th>
+      <th>Availability</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -23,11 +23,11 @@
     <% @apartments.each do |apartment| %>
       <tr>
         <td><%= apartment.street %></td>
-        <td id="latitude"><%= apartment.latitude %></td>
+        <td class="latitude" id="latitude"><%= apartment.latitude %></td>
         <td id="longitude"><%= apartment.longitude %></td>
         <td><%= apartment.city %></td>
         <td><%= apartment.zip %></td>
-        <td><%= apartment.state %></td>
+        <td class="state"><%= apartment.state %></td>
         <td><%= apartment.country %></td>
         <td><%= apartment.name %></td>
         <td><%= apartment.phone %></td>
@@ -41,6 +41,7 @@
 </table>
 
 <br>
+<div class="linksearch">
 
 <%= link_to 'New Apartment', new_apartment_path %>
 <br>
@@ -52,5 +53,6 @@
   <input type="submit" value="Search">
 </form>
 
-<br>
-<br>
+</div>
+
+<div id="map"></div>

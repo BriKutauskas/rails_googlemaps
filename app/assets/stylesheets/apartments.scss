@@ -1,1 +1,67 @@
+* {
+  font-family: 'Lato', sans-serif;
+}
+table {
+  margin: auto;
+  th {
+    font-size: 1.4em;
+  }
+  td {
+    padding: 10px;
+    text-align: center;
+  }
+}
+h1 {
+  text-align: center;
+  padding-top: 3%;
+  padding-bottom: 3%;
+}
 
+input, textarea{
+  border-radius: 20px;
+  height: 2em;
+  border-style: inset;
+  border-width: 2px;
+  padding: 1px;
+  resize: none;
+  line-height: 2em;
+}
+textarea {
+
+}
+label {
+  padding: 10px;
+}
+
+.state {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.latitude {
+  padding-right: 15px;
+}
+
+.imageattach {
+  padding: 20px 0px 20px 80px;
+}
+#attach {
+  border-style: none;
+}
+.form, .linksearch, .show {
+  text-align: center;
+  padding-bottom: 40px;
+}
+
+.actions {
+  padding-bottom: 20px;
+  line-height: 2em;
+}
+.buttontext {
+  text-align: center;
+}
+#map, #showmap {
+  width: 50vw;
+  height: 50vh;
+  margin: 0 auto 30px auto;
+
+}
