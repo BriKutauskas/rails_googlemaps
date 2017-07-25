@@ -43,36 +43,14 @@
 <br>
 
 <%= link_to 'New Apartment', new_apartment_path %>
+<br>
+<br>
 
-<div id="map" ></div>
+<form method="get" action="/apartments">
+  <label for="search">Search apartments:</label>
+  <input type="text" name="search" placeholder="Search By" >
+  <input type="submit" value="Search">
+</form>
 
-<script>
-      var map;
-      function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 2,
-          center: new google.maps.LatLng(2.8,-187.3),
-          mapTypeId: 'terrain'
-        });
-        var results = [map.data.loadGeoJson('apartments.json')];
-        placeMarkers(results);
-}
-
-
-      // Loop through the results array and place a marker for each
-      // set of coordinates.
-      function placeMarkers(results) {
-        for (var i = 0; i < results.length; i++) {
-          var lat = latitude
-          var long = longitude
-          var latLng = new google.maps.LatLng(lat,long);
-          var marker = new google.maps.Marker({
-            position: latLng,
-            map: map
-          });
-        }
-      }
-    </script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBCMfaPWYWnpgZUOjY_I-tO24lgVbP4XG4&callback=initMap">
-    </script>
+<br>
+<br>
