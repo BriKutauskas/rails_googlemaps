@@ -1,6 +1,6 @@
 class ApartmentsController < ApplicationController
+  before_action :authenticate_user! #add this line
   before_action :set_apartment, only: [:show, :edit, :update, :destroy]
-
   # GET /apartments
   # GET /apartments.json
   def index

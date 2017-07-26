@@ -16,13 +16,17 @@ document.addEventListener('DOMContentLoaded', function () {
   var map;
 
   function initMap() {
-    fetch('/apartments.json')
-  .then(function(response){return response.json()})
-  .then(plotMarkers);
+    fetch('/apartments.json', {
+      credentials: 'include'
+    })
+      .then(function(response){
+        console.log(response);
+        return response.json();
+      })
+      .then(plotMarkers);
     map = new google.maps.Map(document.getElementById('map'), {
-      center: {latitude: -34.397, longitude: 150.644},
+      center: {latitude: 32.397, longitude: -117.644},
       zoom: 8
-
     });
   }
 
