@@ -8,8 +8,13 @@ class AdminController < ApplicationController
 
   def update
     user = User.find(params[:id])
-    user.remove_role(:user) # user only has one role
-    user.add_role(:admin)
+    if user.has_role? :user
+      user.remove_role(:user) # user only has one role
+      user.add_role(:admin)
+    else
+      user.remove_role(:admin) # user only has one role
+      user.add_role(:user)
+    end
     redirect_to '/admin'
   end
 

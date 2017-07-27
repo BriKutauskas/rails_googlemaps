@@ -14,7 +14,7 @@
       <td><%= user.roles.last.name %></td>
       <td>
         <%= form_tag("/admin/" + user.id.to_s + "?role=admin", method: :PUT) do %>
-          <input type="submit" value="Make Admin"/>
+          <input type="submit" value="Change Role"/>
         <% end %>
       </td>
 

@@ -5,7 +5,7 @@ class ApartmentsController < ApplicationController
   # GET /apartments
   # GET /apartments.json
   def index
-    authorize! :index, Apartment
+
     if params[:search].nil? || params[:search].empty?
       @apartments = Apartment.all
     else
@@ -20,26 +20,23 @@ class ApartmentsController < ApplicationController
   # GET /apartments/1
   # GET /apartments/1.json
   def show
-    authorize! :show, @apartment
+
   end
 
   # GET /apartments/new
   def new
     @apartment = Apartment.new
-    authorize! :new, @apartment
     @user = current_user
   end
 
   # GET /apartments/1/edit
   def edit
-    authorize! :edit, @apartment
     @user = current_user
   end
 
   # POST /apartments
   # POST /apartments.json
   def create
-    authorize! :create, @apartment
     @apartment = Apartment.new(apartment_params)
     @user = current_user
     respond_to do |format|
@@ -56,7 +53,6 @@ class ApartmentsController < ApplicationController
   # PATCH/PUT /apartments/1
   # PATCH/PUT /apartments/1.json
   def update
-    authorize! :update, @apartment
     @user = current_user
     respond_to do |format|
       if @apartment.update(apartment_params)
@@ -72,7 +68,6 @@ class ApartmentsController < ApplicationController
   # DELETE /apartments/1
   # DELETE /apartments/1.json
   def destroy
-    authorize! :destroy, @apartment
     @apartment.destroy
     @user = current_user
     respond_to do |format|
