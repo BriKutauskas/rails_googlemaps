@@ -65,6 +65,8 @@
     <%= form.file_field :image, id: :attach %>
   </div>
 
+  <input type="hidden" name="apartment[user_id]" id="user_id" value="<%=@user.id%>" >
+  
   <div class="actions">
     <%= form.submit class: :buttontext %>
   </div>

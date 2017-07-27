@@ -4,5 +4,7 @@ validates_attachment :image, presence: true,
     content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] },
     size: { in: 0..10.megabytes }
 
-  belongs_to :user #add this line
+  belongs_to :user, optional: true#add this line
+  validates :user, presence: true # add this
+  resourcify
 end
